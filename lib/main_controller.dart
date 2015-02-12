@@ -31,19 +31,14 @@ class MainController
     init () async
     {
         String json = await HttpRequest.getString('json/info.json');
-        
         List<User> users = decodeJson(json, User);
         
-        nombres = users.map (getField (#nombre)).toList();
-        
-        for (User user in users)
-        {
-            map[user.nombre] = user; 
-        }
+        //TODO: 1. Llenar la lista List<String> nombres con los nombre de todos los usuarios
+        //      2. Llenar el Map<String,Usuario>
     }
     
     seleccionarUsuario (String nombre)
     {
-        user = map [nombre];
+        //TODO: Asignar usuario
     }
 }
